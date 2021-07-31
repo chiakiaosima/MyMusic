@@ -26,4 +26,22 @@ class SoundPlayer: NSObject {
             print("シンバルで、エラーが発生しました！")
         }
     }  //cymbalPlay　ここまで
+    
+    // ギターの音源のデータの読み込み
+    let guitarData = NSDataAsset(name: "guitarSound")!.data
+    
+    // ギター用のプレイヤーの変数
+    var guitarPlayer: AVAudioPlayer!
+    
+    func guitarPlay() {
+        do {
+            // ギター用のプレイヤーに、音源データを指定
+            guitarPlayer = try AVAudioPlayer(data: guitarData)
+            
+            //　ギターの音源再生
+            guitarPlayer.play()
+        } catch {
+            print("ギターで、エラーが発生しました！")
+        }
+    }  //guiterPlay　ここまで
 }
