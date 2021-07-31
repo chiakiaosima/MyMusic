@@ -38,6 +38,8 @@ struct ContentView: View {
                 // ギターボタン
                 Button(action: {
                     //　ボタンをタップした時のアクション
+                    // ギターの音を鳴らす
+                    soundPlayer.guitarPlay()
                 }) {
                     //　画像を表示する
                     Image("guitar")
